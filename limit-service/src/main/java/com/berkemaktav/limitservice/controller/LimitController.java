@@ -11,10 +11,6 @@ public class LimitController {
     @Autowired
     private Configuration configuration;
 
-    public LimitController(Configuration configuration) {
-        this.configuration = configuration;
-    }
-
     @GetMapping("/limit")
     public Limit retrieveLimitsFromConfigurations() {
         return new Limit(configuration.getMinimum(), configuration.getMaximum());
